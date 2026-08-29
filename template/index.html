@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financiamento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <header>
+        <h1>Calcule o valor do Financiamento</h1>
+    </header>
+        <form method="POST">
+         <div id="info">
+            <div class="form-group">
+                <label for="salario">Salário:</label>
+                <input id="salario" name="salario" type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Valor do Empréstimo:</label>
+                <input id="valor" name="valor" type="text" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="entrada">Valor da entrada:</label>
+                <input id="entrada" name="entrada" type="text">
+            </div>
+
+            <button type="submit">Calcular</button>
+        </div>
+        </form>
+        {% if resultado %}
+            <h2 id="res">{{ resultado }}</h2>
+         {% endif %}
+
+         <script src="{{ url_for('static', filename='formatacao.js') }}"></script>
+
+
+</body>
+</html>
